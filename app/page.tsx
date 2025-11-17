@@ -157,16 +157,16 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "Oura Ring Gen 3", price: "$299-$399", desc: "24/7 sleep & recovery tracking", cat: "Sleep Optimization" },
-              { title: "Apollo Neuro", price: "$349", desc: "Stress relief wearable", cat: "Mental Wellness" },
-              { title: "Viome Gut Intelligence", price: "$199", desc: "Personalized nutrition testing", cat: "Nutrition & Gut Health" },
-              { title: "WHOOP 4.0", price: "$239/year", desc: "Advanced fitness & recovery", cat: "Fitness Tracking" },
-              { title: "Joovv Mini", price: "$699", desc: "Red light therapy panel", cat: "Longevity & Anti-Aging" },
-              { title: "Eight Sleep Pod", price: "$2,295", desc: "Temperature-controlled mattress", cat: "Sleep Optimization" },
-              { title: "Levels CGM", price: "$199/month", desc: "Glucose monitoring system", cat: "Nutrition & Gut Health" },
-              { title: "Muse S Headband", price: "$399", desc: "Meditation & sleep tracker", cat: "Mental Wellness" },
+              { title: "Oura Ring Gen 3", price: "$299-$399", desc: "24/7 sleep & recovery tracking", cat: "Sleep Optimization", link: "/product/oura-ring" },
+              { title: "Apollo Neuro", price: "$349", desc: "Stress relief wearable", cat: "Mental Wellness", link: "#" },
+              { title: "Viome Gut Intelligence", price: "$199", desc: "Personalized nutrition testing", cat: "Nutrition & Gut Health", link: "#" },
+              { title: "WHOOP 4.0", price: "$239/year", desc: "Advanced fitness & recovery", cat: "Fitness Tracking", link: "/product/whoop-4" },
+              { title: "Joovv Mini", price: "$699", desc: "Red light therapy panel", cat: "Longevity & Anti-Aging", link: "#" },
+              { title: "Eight Sleep Pod", price: "$2,295", desc: "Temperature-controlled mattress", cat: "Sleep Optimization", link: "/product/eight-sleep-pod" },
+              { title: "Levels CGM", price: "$199/month", desc: "Glucose monitoring system", cat: "Nutrition & Gut Health", link: "#" },
+              { title: "Muse S Headband", price: "$399", desc: "Meditation & sleep tracker", cat: "Mental Wellness", link: "/product/muse-s" },
             ].map((prod, i) => (
-              <div key={i} className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition">
+              <Link key={i} href={prod.link} className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition block">
                 <div className="h-40 bg-gradient-to-br from-teal-100 to-cyan-100 flex items-center justify-center">
                   <span className="text-5xl">🧪</span>
                 </div>
@@ -179,7 +179,7 @@ export default function Home() {
                     View Product 🧬
                   </button>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
