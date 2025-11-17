@@ -22,46 +22,52 @@ export default function SleepOptimization() {
       <section className="pb-20 px-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
-            { 
-              title: "Oura Ring Gen 3", 
-              price: "$299-$399", 
+            {
+              title: "Oura Ring Gen 3",
+              price: "$299-$399",
               desc: "24/7 sleep & recovery tracking",
-              image: "https://picsum.photos/seed/oura/400/300"
+              image: "https://picsum.photos/seed/oura/400/300",
+              link: "/product/oura-ring"
             },
-            { 
-              title: "Eight Sleep Pod", 
-              price: "$2,295", 
+            {
+              title: "Eight Sleep Pod",
+              price: "$2,295",
               desc: "Temperature-controlled mattress",
-              image: "https://picsum.photos/seed/eightsleep/400/300"
+              image: "https://picsum.photos/seed/eightsleep/400/300",
+              link: "/product/eight-sleep-pod"
             },
-            { 
-              title: "WHOOP 4.0", 
-              price: "$239/year", 
+            {
+              title: "WHOOP 4.0",
+              price: "$239/year",
               desc: "Advanced sleep tracking",
-              image: "https://picsum.photos/seed/whoop/400/300"
+              image: "https://picsum.photos/seed/whoop/400/300",
+              link: "/product/whoop-4"
             },
-            { 
-              title: "Muse S Headband", 
-              price: "$399", 
+            {
+              title: "Muse S Headband",
+              price: "$399",
               desc: "Sleep-focused meditation",
-              image: "https://picsum.photos/seed/muse/400/300"
+              image: "https://picsum.photos/seed/muse/400/300",
+              link: "/product/muse-s"
             },
-            { 
-              title: "Fitbit Sense 2", 
-              price: "$299", 
+            {
+              title: "Fitbit Sense 2",
+              price: "$299",
               desc: "Sleep stages & stress tracking",
-              image: "https://picsum.photos/seed/fitbit/400/300"
+              image: "https://picsum.photos/seed/fitbit/400/300",
+              link: "#"
             },
-            { 
-              title: "Withings Sleep Mat", 
-              price: "$99", 
+            {
+              title: "Withings Sleep Mat",
+              price: "$99",
               desc: "Under-mattress sleep tracker",
-              image: "https://picsum.photos/seed/withings/400/300"
+              image: "https://picsum.photos/seed/withings/400/300",
+              link: "#"
             },
           ].map((product, i) => (
-            <Link 
-              key={i} 
-              href={i === 0 ? "/product/oura-ring" : i === 1 ? "/product/eight-sleep-pod" : i === 2 ? "/product/whoop-4" : "#"}
+            <Link
+              key={i}
+              href={product.link}
               className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition block"
             >
               <div 
