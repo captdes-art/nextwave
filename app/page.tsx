@@ -164,7 +164,7 @@ export default function Home() {
               { title: "Joovv Mini", price: "$699", desc: "Red light therapy panel", cat: "Longevity & Anti-Aging" },
               { title: "Eight Sleep Pod", price: "$2,295", desc: "Temperature-controlled mattress", cat: "Sleep Optimization" },
               { title: "Levels CGM", price: "$199/month", desc: "Glucose monitoring system", cat: "Nutrition & Gut Health" },
-              { title: "Muse S Headband", price: "$399", desc: "Meditation & sleep tracker", cat: "Mental Wellness" },
+              { title: "Muse S Headband", price: "$399", desc: "Meditation & sleep tracker", cat: "Mental Wellness", link: "/product/muse-s" },
             ].map((prod, i) => (
               <div key={i} className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition">
                 <div className="h-40 bg-gradient-to-br from-teal-100 to-cyan-100 flex items-center justify-center">
@@ -175,12 +175,84 @@ export default function Home() {
                   <p className="text-sm text-gray-600 mb-3">{prod.desc}</p>
                   <p className="text-lg font-bold text-teal-600 mb-3">{prod.price}</p>
                   <p className="text-xs text-gray-500 mb-4">{prod.cat}</p>
-                  <button className="w-full bg-teal-600 text-white py-2 rounded font-semibold hover:bg-teal-700 text-sm">
-                    View Product 🧬
-                  </button>
+                  {prod.link ? (
+                    <Link href={prod.link} className="block w-full bg-teal-600 text-white py-2 rounded font-semibold hover:bg-teal-700 text-sm text-center">
+                      View Product 🧬
+                    </Link>
+                  ) : (
+                    <button className="w-full bg-teal-600 text-white py-2 rounded font-semibold hover:bg-teal-700 text-sm">
+                      View Product 🧬
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Blog Posts */}
+      <section id="blog" className="py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-5xl font-bold mb-4 text-center">Featured Reviews</h2>
+          <p className="text-xl text-gray-600 text-center mb-16">
+            In-depth reviews and insights on the latest wellness technology
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Muse S Review - Blog Style */}
+            <Link href="/blog/muse-s-review" className="group">
+              <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                <div className="h-48 bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center">
+                  <span className="text-7xl">🧘‍♀️</span>
+                </div>
+                <div className="p-6">
+                  <div className="inline-block bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-semibold mb-3">
+                    Blog Review
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3 group-hover:text-purple-600 transition">
+                    Muse S: Your Mind's Best Friend
+                  </h3>
+                  <p className="text-gray-700 mb-4 leading-relaxed">
+                    OMG, this is seriously THE breakthrough in meditation and sleep technology! Real-time brainwave feedback that actually works.
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-purple-600 font-semibold">Read Full Review →</span>
+                    <span className="text-sm font-bold text-purple-600">$399</span>
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            {/* Muse S Product Page */}
+            <Link href="/product/muse-s" className="group">
+              <div className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                <div className="h-48 bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center">
+                  <span className="text-7xl">🧘‍♀️</span>
+                </div>
+                <div className="p-6">
+                  <div className="inline-block bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-sm font-semibold mb-3">
+                    Product Page
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3 group-hover:text-teal-600 transition">
+                    Muse S Headband (Gen 2)
+                  </h3>
+                  <p className="text-gray-700 mb-4 leading-relaxed">
+                    Fall asleep faster and meditate deeper with brain-sensing technology. Experience guided sleep journeys that respond to your mind.
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-teal-600 font-semibold">View Product Details →</span>
+                    <span className="text-sm font-bold text-teal-600">$399</span>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          <div className="text-center mt-8">
+            <Link href="/blog" className="inline-block bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700">
+              View All Reviews
+            </Link>
           </div>
         </div>
       </section>
@@ -243,6 +315,7 @@ export default function Home() {
               <ul className="text-sm space-y-2">
                 <li><a href="#tech" className="hover:text-white">Technologies</a></li>
                 <li><a href="#products" className="hover:text-white">Products</a></li>
+                <li><Link href="/blog" className="hover:text-white">Blog & Reviews</Link></li>
                 <li><a href="#about" className="hover:text-white">About Us</a></li>
               </ul>
             </div>
