@@ -50,36 +50,41 @@ export default function Home() {
                 title: "Sleep Optimization & Recovery", 
                 desc: "Enhance sleep quality and accelerate physical recovery",
                 image: "https://picsum.photos/seed/sleep/400/300",
-                icon: "🌙"
+                icon: "🌙",
+                href: "/category/sleep"
               },
               { 
                 title: "Mental Wellness & Cognitive Performance", 
                 desc: "Boost focus, memory, and mental clarity",
                 image: "https://picsum.photos/seed/mental/400/300",
-                icon: "🧠"
+                icon: "🧠",
+                href: "/category/mental-wellness"
               },
               { 
                 title: "Personalized Nutrition & Gut Health", 
                 desc: "Optimize your diet based on your unique biology",
                 image: "https://picsum.photos/seed/nutrition/400/300",
-                icon: "🥗"
+                icon: "🥗",
+                href: "/category/nutrition"
               },
               { 
                 title: "Fitness Tracking & Body Optimization", 
                 desc: "Monitor and enhance your physical performance",
                 image: "https://picsum.photos/seed/fitness/400/300",
-                icon: "⚡"
+                icon: "⚡",
+                href: "/category/fitness"
               },
               { 
                 title: "Longevity & Anti-Aging Technologies", 
                 desc: "Extend healthspan with cutting-edge interventions",
                 image: "https://picsum.photos/seed/longevity/400/300",
-                icon: "✨"
+                icon: "✨",
+                href: "/category/longevity"
               },
             ].map((cat, i) => (
               <Link 
                 key={i}
-                href={i === 0 ? "/category/sleep" : "#"}
+                href={cat.href}
                 className="rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition cursor-pointer group block"
               >
                 <div 
