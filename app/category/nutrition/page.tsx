@@ -1,7 +1,6 @@
 'use client'
 
-import Image from "next/image"
-import Header from "@/components/Header"
+import Header from "@/src/components/Header"
 import Link from "next/link"
 
 export default function NutritionCategory() {
@@ -114,31 +113,6 @@ export default function NutritionCategory() {
                 <li><Link href="/category/nutrition" className="hover:text-white">Nutrition</Link></li>
                 <li><Link href="/category/fitness" className="hover:text-white">Fitness</Link></li>
                 <li><Link href="/category/longevity" className="hover:text-white">Longevity</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-bold mb-4">Company</h3>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="/#about" className="hover:text-white">About</a></li>
-                <li><a href="/#contact" className="hover:text-white">Contact</a></li>
-                <li><a href="#" className="hover:text-white">Privacy</a></li>
-                <li><a href="#" className="hover:text-white">Terms</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-bold mb-4">Resources</h3>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-white">Blog</a></li>
-                <li><a href="#" className="hover:text-white">Guides</a></li>
-                <li><a href="#" className="hover:text-white">Research</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-bold mb-4">Follow</h3>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-white">Twitter</a></li>
-                <li><a href="#" className="hover:text-white">Instagram</a></li>
-                <li><a href="#" className="hover:text-white">YouTube</a></li>
               </ul>
             </div>
           </div>
