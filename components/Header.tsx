@@ -11,12 +11,13 @@ export default function Header() {
         </div>
         
         <nav className="hidden md:flex gap-8 text-sm text-gray-700">
-          <Link href="#home" className="hover:text-gray-900">Home</Link>
-          <Link href="#categories" className="hover:text-gray-900">Categories</Link>
-          <Link href="#tech" className="hover:text-gray-900">Technologies</Link>
-          <Link href="#products" className="hover:text-gray-900">Products</Link>
-          <Link href="#about" className="hover:text-gray-900">About</Link>
-          <Link href="#contact" className="hover:text-gray-900">Contact</Link>
+          <Link href="/" className="hover:text-gray-900">Home</Link>
+          <Link href="/#categories" className="hover:text-gray-900">Categories</Link>
+          <Link href="/#tech" className="hover:text-gray-900">Technologies</Link>
+          <Link href="/#products" className="hover:text-gray-900">Products</Link>
+          <Link href="/blog" className="hover:text-gray-900 font-semibold text-teal-600">Blog</Link>
+          <Link href="/#about" className="hover:text-gray-900">About</Link>
+          <Link href="/#contact" className="hover:text-gray-900">Contact</Link>
         </nav>
       </div>
     </header>
