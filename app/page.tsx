@@ -164,7 +164,7 @@ export default function Home() {
               { title: "Joovv Mini", price: "$699", desc: "Red light therapy panel", cat: "Longevity & Anti-Aging", link: "#" },
               { title: "Eight Sleep Pod", price: "$2,295", desc: "Temperature-controlled mattress", cat: "Sleep Optimization", link: "/product/eight-sleep-pod" },
               { title: "Levels CGM", price: "$199/month", desc: "Glucose monitoring system", cat: "Nutrition & Gut Health", link: "#" },
-              { title: "Muse S Headband", price: "$399", desc: "Meditation & sleep tracker", cat: "Mental Wellness", link: "/product/muse-s" },
+              { title: "Muse S Headband", price: "$399", desc: "Meditation & sleep tracker", cat: "Mental Wellness", link: "/review/muse-s" },
             ].map((prod, i) => (
               <Link key={i} href={prod.link} className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition block">
                 <div className="h-40 bg-gradient-to-br from-teal-100 to-cyan-100 flex items-center justify-center">
