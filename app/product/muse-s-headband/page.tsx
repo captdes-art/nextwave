@@ -1,7 +1,7 @@
 'use client'
 
 import Link from "next/link"
-import Header from "@/src/components/Header"
+import Header from "../../../components/Header"
 
 export default function MuseSPage() {
   return (
