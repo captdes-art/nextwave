@@ -2,6 +2,19 @@ import { BlogPost } from "@/types"
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "red-light-therapy-benefits",
+    title: "The Science-Backed Benefits of Red Light Therapy: A Complete Guide",
+    excerpt: "Elite athletes use it for recovery, dermatologists recommend it for skin health. Discover the science behind red light therapy and which devices deliver results.",
+    category: "Longevity & Recovery",
+    date: "Nov 20, 2025",
+    author: {
+      name: "Next Wave Wellness Research Team",
+    },
+    link: "/blog/red-light-therapy-benefits",
+    icon: "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=800&h=600&fit=crop",
+    readTime: "15 min read",
+  },
+  {
     id: "muse-s-review",
     title: "Muse S: Your Mind's Best Friend",
     excerpt: "OMG, this is seriously THE breakthrough in meditation and sleep technology! Real-time brainwave feedback that actually works.",
