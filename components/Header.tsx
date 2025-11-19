@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export default function Header() {
   return (
-    <header className="fixed top-0 w-full bg-white border-b border-gray-100 z-50">
+    <header className="fixed top-0 w-full bg-white border-b border-gray-100 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 bg-teal-600 rounded-full" />
