@@ -6,12 +6,21 @@ interface BlogPostCardProps {
 }
 
 export default function BlogPostCard({ post }: BlogPostCardProps) {
+  const isImageUrl = post.icon?.startsWith('http') || false
+  
   return (
     <Link href={post.link} className="group">
       <div className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition h-full">
-        <div className="h-48 bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center text-6xl">
-          {post.icon}
-        </div>
+        {isImageUrl ? (
+          <div 
+            className="h-48 bg-cover bg-center"
+            style={{ backgroundImage: `url('${post.icon}')` }}
+          />
+        ) : (
+          <div className="h-48 bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center text-6xl">
+            {post.icon}
+          </div>
+        )}
         <div className="p-6">
           <div className="flex items-center justify-between mb-3">
             <span className="text-xs font-semibold text-purple-600 uppercase">

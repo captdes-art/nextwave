@@ -12,7 +12,7 @@ export const blogPosts: BlogPost[] = [
       bio: "Health & Wellness Journalist",
     },
     link: "/article/muse-s-headband-review",
-    icon: "🧘‍♀️",
+    icon: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600&fit=crop",
     readTime: "8 min read",
   },
   {
@@ -25,7 +25,7 @@ export const blogPosts: BlogPost[] = [
       name: "Sarah Chen",
     },
     link: "/product/oura-ring",
-    icon: "💍",
+    icon: "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=800&h=600&fit=crop",
     readTime: "10 min read",
   },
   {
@@ -38,7 +38,7 @@ export const blogPosts: BlogPost[] = [
       name: "Sarah Chen",
     },
     link: "/product/eight-sleep-pod",
-    icon: "🛏️",
+    icon: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=600&fit=crop",
     readTime: "12 min read",
   },
   {
@@ -51,7 +51,7 @@ export const blogPosts: BlogPost[] = [
       name: "Sarah Chen",
     },
     link: "/product/whoop-4",
-    icon: "⌚",
+    icon: "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=800&h=600&fit=crop",
     readTime: "9 min read",
   },
 ]
