@@ -41,9 +41,11 @@ export default function Home() {
             </div>
           </div>
           <div className="flex justify-center">
-            <div className="w-96 h-96 bg-gradient-to-br from-teal-100 to-cyan-100 rounded-lg flex items-center justify-center">
-              <span className="text-9xl">🧬</span>
-            </div>
+            <img 
+              src="/images/logo.png" 
+              alt="Next Wave Wellness" 
+              className="w-96 h-96 object-contain"
+            />
           </div>
         </div>
       </section>
