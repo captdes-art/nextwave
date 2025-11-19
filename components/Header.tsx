@@ -11,7 +11,8 @@ export default function Header() {
         </div>
         
         <nav className="hidden md:flex gap-8 text-sm text-gray-700">
-          <Link href="#home" className="hover:text-gray-900">Home</Link>
+          <Link href="/" className="hover:text-gray-900">Home</Link>
+          <Link href="/blog" className="hover:text-gray-900">Blog</Link>
           <Link href="#categories" className="hover:text-gray-900">Categories</Link>
           <Link href="#tech" className="hover:text-gray-900">Technologies</Link>
           <Link href="#products" className="hover:text-gray-900">Products</Link>
