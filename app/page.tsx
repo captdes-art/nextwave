@@ -1,14 +1,26 @@
 'use client'
 
-import Image from "next/image"
 import Header from "@/components/Header"
-import Link from "next/link"
+import ProductCard from "@/components/ui/ProductCard"
+import CategoryCard from "@/components/ui/CategoryCard"
+import TechnologyCard from "@/components/ui/TechnologyCard"
+import { products } from "@/data/products"
+import { categories } from "@/data/categories"
+import { technologies } from "@/data/technologies"
+
+const categoryImages: Record<string, string> = {
+  "sleep": "https://picsum.photos/seed/sleep/400/300",
+  "mental-wellness": "https://picsum.photos/seed/mental/400/300",
+  "nutrition": "https://picsum.photos/seed/nutrition/400/300",
+  "fitness": "https://picsum.photos/seed/fitness/400/300",
+  "longevity": "https://picsum.photos/seed/longevity/400/300",
+}
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      
+
       {/* Hero Section */}
       <section id="home" className="pt-32 pb-20 px-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
@@ -29,11 +41,9 @@ export default function Home() {
             </div>
           </div>
           <div className="flex justify-center">
-            <img 
-              src="/images/logo.png" 
-              alt="Next Wave Wellness" 
-              className="w-96 h-96 object-contain"
-            />
+            <div className="w-96 h-96 bg-gradient-to-br from-teal-100 to-cyan-100 rounded-lg flex items-center justify-center">
+              <span className="text-9xl">🧬</span>
+            </div>
           </div>
         </div>
       </section>
@@ -45,59 +55,14 @@ export default function Home() {
           <p className="text-xl text-gray-600 text-center mb-16">
             Choose your area of interest to discover the latest biohacking technologies and products
           </p>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-            {[
-              { 
-                title: "Sleep Optimization & Recovery", 
-                desc: "Enhance sleep quality and accelerate physical recovery",
-                image: "https://picsum.photos/seed/sleep/400/300",
-                icon: "🌙"
-              },
-              { 
-                title: "Mental Wellness & Cognitive Performance", 
-                desc: "Boost focus, memory, and mental clarity",
-                image: "https://picsum.photos/seed/mental/400/300",
-                icon: "🧠"
-              },
-              { 
-                title: "Personalized Nutrition & Gut Health", 
-                desc: "Optimize your diet based on your unique biology",
-                image: "https://picsum.photos/seed/nutrition/400/300",
-                icon: "🥗"
-              },
-              { 
-                title: "Fitness Tracking & Body Optimization", 
-                desc: "Monitor and enhance your physical performance",
-                image: "https://picsum.photos/seed/fitness/400/300",
-                icon: "⚡"
-              },
-              { 
-                title: "Longevity & Anti-Aging Technologies", 
-                desc: "Extend healthspan with cutting-edge interventions",
-                image: "https://picsum.photos/seed/longevity/400/300",
-                icon: "✨"
-              },
-            ].map((cat, i) => (
-              <Link 
-                key={i}
-                href={i === 0 ? "/category/sleep" : "#"}
-                className="rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition cursor-pointer group block"
-              >
-                <div 
-                  className="h-48 bg-cover bg-center group-hover:scale-105 transition duration-300 relative flex items-start justify-start p-3"
-                  style={{ backgroundImage: `url('${cat.image}')` }}
-                >
-                  <div className="w-14 h-14 bg-teal-500 rounded-full flex items-center justify-center text-2xl shadow-lg">
-                    {cat.icon}
-                  </div>
-                </div>
-                
-                <div className="p-4 bg-white">
-                  <h3 className="font-semibold text-gray-900 mb-2 text-sm">{cat.title}</h3>
-                  <p className="text-xs text-gray-600">{cat.desc}</p>
-                </div>
-              </Link>
+            {categories.map((category) => (
+              <CategoryCard
+                key={category.id}
+                category={category}
+                imageUrl={categoryImages[category.slug]}
+              />
             ))}
           </div>
         </div>
@@ -112,25 +77,8 @@ export default function Home() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { title: "Sleep Trackers", desc: "Advanced wearable technology that monitors your sleep stages, heart rate variability, and recovery metrics to optimize your rest.", cat: "Sleep Optimization" },
-              { title: "Nootropic Supplements", desc: "Scientifically-formulated cognitive enhancers designed to improve focus, memory, and mental clarity.", cat: "Mental Wellness" },
-              { title: "DNA Nutrition Testing", desc: "Personalized nutrition insights based on your unique genetic profile to optimize your diet and health outcomes.", cat: "Nutrition & Gut Health" },
-              { title: "Wearable Fitness Trackers", desc: "Real-time monitoring of your physical activity, vital signs, and performance metrics for data-driven fitness optimization.", cat: "Fitness Tracking" },
-              { title: "Red Light Therapy", desc: "FDA-cleared photobiomodulation devices that stimulate cellular energy production for enhanced recovery and anti-aging benefits.", cat: "Longevity & Anti-Aging" },
-              { title: "Continuous Glucose Monitors", desc: "Track your blood glucose levels in real-time to understand how foods affect your metabolism and optimize your diet.", cat: "Nutrition & Gut Health" },
-            ].map((tech, i) => (
-              <div key={i} className="border border-gray-200 rounded-lg p-8 hover:shadow-lg transition">
-                <div className="w-full h-40 bg-gradient-to-br from-teal-100 to-cyan-100 rounded mb-6 flex items-center justify-center">
-                  <span className="text-5xl">🔬</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-3">{tech.title}</h3>
-                <p className="text-gray-700 text-sm mb-6 leading-relaxed">{tech.desc}</p>
-                <div className="flex justify-between items-center pt-4 border-t">
-                  <span className="text-xs font-semibold text-teal-600 uppercase">{tech.cat}</span>
-                  <a href="#" className="text-teal-600 font-semibold text-sm hover:text-teal-700">Learn More →</a>
-                </div>
-              </div>
+            {technologies.map((tech) => (
+              <TechnologyCard key={tech.id} technology={tech} />
             ))}
           </div>
         </div>
@@ -158,30 +106,8 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { title: "Oura Ring Gen 3", price: "$299-$399", desc: "24/7 sleep & recovery tracking", cat: "Sleep Optimization", link: "/product/oura-ring" },
-              { title: "Apollo Neuro", price: "$349", desc: "Stress relief wearable", cat: "Mental Wellness", link: "#" },
-              { title: "Viome Gut Intelligence", price: "$199", desc: "Personalized nutrition testing", cat: "Nutrition & Gut Health", link: "#" },
-              { title: "WHOOP 4.0", price: "$239/year", desc: "Advanced fitness & recovery", cat: "Fitness Tracking", link: "/product/whoop-4" },
-              { title: "Joovv Mini", price: "$699", desc: "Red light therapy panel", cat: "Longevity & Anti-Aging", link: "#" },
-              { title: "Eight Sleep Pod", price: "$2,295", desc: "Temperature-controlled mattress", cat: "Sleep Optimization", link: "/product/eight-sleep-pod" },
-              { title: "Levels CGM", price: "$199/month", desc: "Glucose monitoring system", cat: "Nutrition & Gut Health", link: "#" },
-              { title: "Muse S Headband", price: "$399", desc: "Meditation & sleep tracker", cat: "Mental Wellness", link: "/article/muse-s-headband-review" },
-            ].map((prod, i) => (
-              <Link key={i} href={prod.link} className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition block">
-                <div className="h-40 bg-gradient-to-br from-teal-100 to-cyan-100 flex items-center justify-center">
-                  <span className="text-5xl">🧪</span>
-                </div>
-                <div className="p-6">
-                  <h3 className="font-semibold text-gray-900 mb-2">{prod.title}</h3>
-                  <p className="text-sm text-gray-600 mb-3">{prod.desc}</p>
-                  <p className="text-lg font-bold text-teal-600 mb-3">{prod.price}</p>
-                  <p className="text-xs text-gray-500 mb-4">{prod.cat}</p>
-                  <button className="w-full bg-teal-600 text-white py-2 rounded font-semibold hover:bg-teal-700 text-sm">
-                    View Product 🧬
-                  </button>
-                </div>
-              </Link>
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         </div>

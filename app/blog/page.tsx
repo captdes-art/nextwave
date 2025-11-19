@@ -1,13 +1,15 @@
 'use client'
 
 import Header from "@/components/Header"
+import BlogPostCard from "@/components/ui/BlogPostCard"
 import Link from "next/link"
+import { blogPosts } from "@/data/blog"
 
 export default function BlogPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-6 bg-gradient-to-br from-purple-50 to-pink-50">
         <div className="max-w-7xl mx-auto">
@@ -22,56 +24,8 @@ export default function BlogPage() {
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Muse S: Your Mind's Best Friend",
-                excerpt: "OMG, this is seriously THE breakthrough in meditation and sleep technology! Real-time brainwave feedback that actually works.",
-                category: "Brain Tech",
-                date: "Nov 18, 2025",
-                link: "/article/muse-s-headband-review",
-                icon: "🧘‍♀️"
-              },
-              {
-                title: "Oura Ring Gen 3 Review",
-                excerpt: "Comprehensive review of the latest Oura Ring with detailed analysis of sleep tracking, heart rate variability, and readiness scores.",
-                category: "Wearables",
-                date: "Nov 15, 2025",
-                link: "/product/oura-ring",
-                icon: "💍"
-              },
-              {
-                title: "Eight Sleep Pod Deep Dive",
-                excerpt: "Is temperature-controlled sleep worth the investment? We tested the Eight Sleep Pod and break down all the science behind it.",
-                category: "Sleep Tech",
-                date: "Nov 12, 2025",
-                link: "/product/eight-sleep-pod",
-                icon: "🛏️"
-              },
-              {
-                title: "WHOOP 4.0: Elite Athlete Tool",
-                excerpt: "What makes WHOOP different from other fitness trackers? We explore the recovery metrics and strain analysis that athletes love.",
-                category: "Fitness",
-                date: "Nov 10, 2025",
-                link: "/product/whoop-4",
-                icon: "⌚"
-              },
-            ].map((post, i) => (
-              <Link key={i} href={post.link} className="group">
-                <div className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition h-full">
-                  <div className="h-48 bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center text-6xl">
-                    {post.icon}
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-xs font-semibold text-purple-600 uppercase">{post.category}</span>
-                      <span className="text-xs text-gray-500">{post.date}</span>
-                    </div>
-                    <h3 className="text-xl font-bold mb-3 group-hover:text-purple-600 transition">{post.title}</h3>
-                    <p className="text-gray-600 text-sm mb-4 leading-relaxed">{post.excerpt}</p>
-                    <div className="text-purple-600 font-semibold text-sm">Read Article →</div>
-                  </div>
-                </div>
-              </Link>
+            {blogPosts.map((post) => (
+              <BlogPostCard key={post.id} post={post} />
             ))}
           </div>
         </div>
@@ -119,8 +73,8 @@ export default function BlogPage() {
             <div>
               <h3 className="font-bold mb-4">Company</h3>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="/#about" className="hover:text-white">About</a></li>
-                <li><a href="/#contact" className="hover:text-white">Contact</a></li>
+                <li><Link href="/#about" className="hover:text-white">About</Link></li>
+                <li><Link href="/#contact" className="hover:text-white">Contact</Link></li>
                 <li><a href="#" className="hover:text-white">Privacy</a></li>
               </ul>
             </div>
