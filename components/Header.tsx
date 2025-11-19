@@ -6,12 +6,10 @@ export default function Header() {
     <header className="fixed top-0 w-full bg-white border-b border-gray-100 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
-          <Image 
+          <img 
             src="/images/logo.png" 
             alt="Next Wave Wellness Logo" 
-            width={40} 
-            height={40}
-            className="object-contain"
+            style={{ width: '40px', height: '40px', objectFit: 'contain' }}
           />
           <span className="font-semibold text-gray-900">Next Wave Wellness</span>
         </Link>
